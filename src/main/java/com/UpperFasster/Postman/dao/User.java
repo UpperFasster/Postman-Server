@@ -1,9 +1,13 @@
 package com.UpperFasster.Postman.dao;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Entity
+@Data
+@NoArgsConstructor
 @Table(
         name = "info_users",
         uniqueConstraints = {
@@ -15,9 +19,11 @@ import jakarta.persistence.*;
 )
 public class User {
     @Id
+    @GeneratedValue(
+            strategy=GenerationType.IDENTITY
+    )
     @Column(
             name = "id",
-            //TODO: make auto increment
             updatable = false,
             nullable = false,
             columnDefinition = "SMALLINT UNSIGNED"

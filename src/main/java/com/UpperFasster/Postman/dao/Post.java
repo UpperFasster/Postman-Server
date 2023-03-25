@@ -1,21 +1,24 @@
 package com.UpperFasster.Postman.dao;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.ZonedDateTime;
 
 @Entity
+@Data
+@NoArgsConstructor
 @Table(
         name = "post_text"
 )
 public class Post {
     @Id
+    @GeneratedValue(
+            strategy=GenerationType.IDENTITY
+    )
     @Column(
             name = "id",
-            //TODO: make auto increment
             nullable = false,
             updatable = false,
             insertable = false,

@@ -1,19 +1,22 @@
 package com.UpperFasster.Postman.dao;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@NoArgsConstructor
 @Table(
         name = "user_posts"
 )
 public class users_posts {
     @Id
+    @GeneratedValue(
+            strategy=GenerationType.IDENTITY
+    )
     @Column(
             name = "id",
-            //TODO: make auto increment
             updatable = false,
             nullable = false,
             columnDefinition = "SMALLINT UNSIGNED"
