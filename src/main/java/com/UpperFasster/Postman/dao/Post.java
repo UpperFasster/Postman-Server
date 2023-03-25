@@ -59,49 +59,4 @@ public class Post {
     )
     private String postTopic;
 
-    public Post() {}
-    public Post(int id, ZonedDateTime dateCreated, ZonedDateTime dateLastChange) {
-        this.id = id;
-        this.dateCreated = dateCreated;
-        this.dateLastChange = dateLastChange;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public ZonedDateTime getDateCreated() {
-        //TODO: recognize to java get it, that was date
-        return dateCreated;
-    }
-
-    public ZonedDateTime getDateLastChange() {
-        //TODO: Same thing at "DateCreated"
-        return dateLastChange;
-    }
-
-
-    public String getUserText() {
-        return userText;
-    }
-
-    public void setUserText(String userText) {
-        this.userText = userText;
-    }
-
-    public String getHeader() {
-        return header;
-    }
-
-    public void setHeader(String header) {
-        this.header = header;
-    }
-
-    public String getPostTopic() {
-        return postTopic;
-    }
-
-    public void setPostTopic(String postTopic) {
-        this.postTopic = postTopic;
-    }
 }
