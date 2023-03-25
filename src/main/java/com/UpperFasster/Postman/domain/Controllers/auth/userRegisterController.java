@@ -1,4 +1,4 @@
-package com.UpperFasster.Postman.domain.Controllers;
+package com.UpperFasster.Postman.domain.Controllers.auth;
 
 import com.UpperFasster.Postman.domain.dao.User;
 import org.springframework.stereotype.Controller;
@@ -14,7 +14,6 @@ public class userRegisterController {
     public String showForm(Model model){
         User user = new User();
         model.addAttribute("user", user);
-
         return "register_form";
     }
 
