@@ -1,4 +1,4 @@
-package com.UpperFasster.Postman.dao;
+package com.UpperFasster.Postman.domain.dao;
 
 import jakarta.persistence.*;
 import lombok.Data;

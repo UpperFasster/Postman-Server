@@ -1,12 +1,17 @@
-package com.UpperFasster.Postman.dao;
+package com.UpperFasster.Postman.domain.dao;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.time.LocalDateTime;
 
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @Table(
         name = "info_users",
@@ -51,4 +56,9 @@ public class User {
             length = 64
     )
     private String password;
+    @Column(
+            name = "accountCreated",
+            columnDefinition = "TIMESTAMP default CURRENT_TIMESTAMP"
+    )
+    private LocalDateTime accountCreated;
 }
