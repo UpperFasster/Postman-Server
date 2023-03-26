@@ -1,4 +1,4 @@
-package com.UpperFasster.Postman.appuser;
+package com.UpperFasster.Postman.user;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -7,7 +7,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 
@@ -21,8 +20,13 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(
+            updatable = false,
+            columnDefinition = "SMALLINT"
+    )
     private int id;
-    private String name;
+    private String firstName;
+    private String lastName;
     private String email;
     private String password;
     @Enumerated(EnumType.STRING)
@@ -30,13 +34,15 @@ public class User implements UserDetails {
     private Boolean locked;
     private Boolean enabled;
 
-    public User(String name,
+    public User(String firstName,
+                String lastName,
                 String email,
                 String password,
                 UserRole UserRole,
                 Boolean locked,
                 Boolean enabled) {
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.UserRole = UserRole;
@@ -54,7 +60,6 @@ public class User implements UserDetails {
         return password;
     }
 
-    //cuz we do not had username, we use email
     @Override
     public String getUsername() {
         return email;

@@ -1,4 +1,4 @@
-package com.UpperFasster.Postman.appuser;
+package com.UpperFasster.Postman.user;
 
 public enum UserRole {
     USER,
