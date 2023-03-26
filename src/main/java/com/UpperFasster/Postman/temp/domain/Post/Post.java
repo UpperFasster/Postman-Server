@@ -1,8 +1,10 @@
-package com.UpperFasster.Postman.domain.dao;
+package com.UpperFasster.Postman.domain.Post;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import java.time.ZonedDateTime;
 
@@ -15,7 +17,7 @@ import java.time.ZonedDateTime;
 public class Post {
     @Id
     @GeneratedValue(
-            strategy=GenerationType.IDENTITY
+            strategy=GenerationType.AUTO
     )
     @Column(
             name = "id",
@@ -39,7 +41,7 @@ public class Post {
             name = "dateLastChange",
             updatable = false,
             insertable = false,
-            nullable = false,
+            nullable = true,
             columnDefinition = "TIMESTAMP on update CURRENT_TIMESTAMP"
     )
     private ZonedDateTime dateLastChange;
