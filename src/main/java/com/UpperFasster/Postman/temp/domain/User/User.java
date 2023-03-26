@@ -1,4 +1,4 @@
-package com.UpperFasster.Postman.entity;
+package com.UpperFasster.Postman.temp.domain.User;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Getter
@@ -54,22 +52,5 @@ public class User {
     )
     private LocalDateTime accountCreated;
 
-
-    @ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-    @JoinTable(
-            name = "users_roles",
-            joinColumns = {@JoinColumn(name="USER_ID", referencedColumnName = "ID")},
-            inverseJoinColumns={@JoinColumn(name="ROLE_ID", referencedColumnName="ID")}
-    )
-    private List<Role> roles = new ArrayList<>();
-
-
-    public String getName() {
-        return getName();
-    }
-
-    public void setName(String s) {
-        s = firstName + lastName;
-    }
 }
 

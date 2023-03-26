@@ -1,4 +1,4 @@
-package com.UpperFasster.Postman.domain.User;
+package com.UpperFasster.Postman.temp.domain.User;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package com.UpperFasster.Postman.domain.Post;
+package com.UpperFasster.Postman.temp.domain.Post;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
